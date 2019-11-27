@@ -1,31 +1,62 @@
 {
   "name": "toban-djan",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
-  },
+  "description": "Toban-djan, a cross-platform multimedia file information management system",
+  "main": "main/index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "set BROWSER=none&start for /l %a in (0, 0, 1) do npm run start-electron&react-scripts start",
+    "start-electron": "electron ./dev.js",
+    "build": "react-scripts build&electron-packager . --out=out --platform=all --electron-version=7.1.0 --overwrite --ignore=\"^/(?!build|main|backend|node_modules|package\\.json).|/node_modules/\\.cache\"",
+    "build:linux": "react-scripts build&electron-packager . --out=out --platform=linux --electron-version=7.1.0 --overwrite --ignore=\"^/(?!build|main|backend|node_modules|package\\.json).|/node_modules/\\.cache\"",
+    "build:win": "react-scripts build&electron-packager . --out=out --platform=win32 --electron-version=7.1.0 --overwrite --ignore=\"^/(?!build|main|backend|node_modules|package\\.json).|/node_modules/\\.cache\"",
+    "build:mac": "react-scripts build&electron-packager . --out=out --platform=darwin --electron-version=7.1.0 --overwrite --ignore=\"^/(?!build|main|backend|node_modules|package\\.json).|/node_modules/\\.cache\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidDiao/Toban-Djan.git"
+  },
+  "keywords": [
+    "file",
+    "management",
+    "electron",
+    "cross-platform"
+  ],
+  "author": "DavidDiao",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/DavidDiao/Toban-Djan/issues"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": ".",
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "chrome 78"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "chrome 78"
     ]
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "busboy": "^0.3.1",
+    "form-data": "^3.0.0",
+    "hasha": "^5.1.0",
+    "lodash": "^4.17.15",
+    "mime": "^2.4.4",
+    "nedb": "^1.8.0",
+    "string-random": "^0.1.3"
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.6.0",
+    "@material-ui/icons": "^4.5.1",
+    "electron": "7.1.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-hashchange": "^0.1.0",
+    "react-scripts": "3.2.0"
   }
 }
