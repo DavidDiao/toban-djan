@@ -1,3 +1,11 @@
+前端使用Electron跨平台桌面应用开发框架+React响应式Javascript框架+Material UI前端组件库。为了便于本地部署，后端使用Node.js开发。Electron渲染进程处理用户操作及展示部分，主进程处理用户状态管理及后台操作。后端采用可分离式设计，为了便于演示，服务器将部署在本地。
+
+本来没想传的 想了想我需要证明我会react 就丢坨垃圾到github吧
+
+[这里](demo.pdf)有当时写实验报告里附的效果图
+
+下面是create-react-app自动生成的 反正也没错就不删了
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

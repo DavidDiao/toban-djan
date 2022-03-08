@@ -13,3 +13,6 @@
 # conf
 /.vscode
 *.json
+
+# other
+/实验报告之类的
